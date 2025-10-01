@@ -1,77 +1,12 @@
 [
   {
     "id": 1759350271084,
-    "text": "dasfgdhfjgklhgjhfg",
+    "text": "Test görevi",
     "completed": false
   },
   {
     "id": 1759350272128,
-    "text": "fsdfdsafdasga",
-    "completed": true
-  },
-  {
-    "id": 1759350275814,
-    "text": "gdsagdsagdsa",
-    "completed": true
-  },
-  {
-    "id": 1759351540063,
-    "text": "dfa",
-    "completed": false
-  },
-  {
-    "id": 1759351908662,
-    "text": "fdsfdsgdsf",
-    "completed": false
-  },
-  {
-    "id": 1759351908870,
-    "text": "dgsg",
-    "completed": false
-  },
-  {
-    "id": 1759351909032,
-    "text": "ds",
-    "completed": false
-  },
-  {
-    "id": 1759351909164,
-    "text": "fds",
-    "completed": false
-  },
-  {
-    "id": 1759351909323,
-    "text": "fds",
-    "completed": false
-  },
-  {
-    "id": 1759351909470,
-    "text": "g",
-    "completed": false
-  },
-  {
-    "id": 1759351909614,
-    "text": "ds",
-    "completed": false
-  },
-  {
-    "id": 1759351909735,
-    "text": "gds",
-    "completed": false
-  },
-  {
-    "id": 1759351910002,
-    "text": "g",
-    "completed": false
-  },
-  {
-    "id": 1759352010601,
-    "text": "dsfdsfs",
-    "completed": false
-  },
-  {
-    "id": 1759352079370,
-    "text": "baba pro",
+    "text": "Test görevi 2",
     "completed": true
   }
 ]
