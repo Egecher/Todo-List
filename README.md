@@ -28,7 +28,7 @@ Frontend ve backend birlikte çalışır; görevleri ekleyebilir, tamamlayabilir
 1. Repo’yu klonla:
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/Egecher/Todo-List.git
 cd todo-app
 ```
 
@@ -74,3 +74,7 @@ todo-app/
 * Görevleri tarih veya öncelik ile sıralama
 * Görevleri kategorilere ayırma
 * Mobil uyumlu tasarım ve PWA desteği
+
+## License
+
+Bu proje MIT Lisansı kapsamında lisanslanmıştır. Ayrıntılar için [LICENSE](./LICENSE) dosyasına bakın.
