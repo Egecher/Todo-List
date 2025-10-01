@@ -28,6 +28,29 @@ app.post("/api/todos", (req, res) => {
   res.json(newTodo);
 });
 
+// Reorder todos
+app.put("/api/todos/reorder", (req, res) => {
+  try {
+    const ids = Array.isArray(req.body.ids) ? req.body.ids.map(Number) : [];
+    if (!ids.length) return res.status(400).json({ message: "ids array required" });
+
+    let todos = JSON.parse(fs.readFileSync(todosFile, "utf8"));
+    const map = new Map(todos.map(t => [t.id, t]));
+    const reordered = ids.map(id => map.get(id)).filter(Boolean);
+
+    todos.forEach(t => {
+      if (!ids.includes(t.id)) reordered.push(t);
+    });
+
+    fs.writeFileSync(todosFile, JSON.stringify(reordered, null, 2));
+
+    res.json({ message: "Reordered" });
+  } catch (error) {
+    console.error("Reorder error:", error);
+    res.status(500).json({ message: "Server error during reordering" });
+  }
+});
+
 // Toggle complete
 app.put("/api/todos/:id", (req, res) => {
   const todos = JSON.parse(fs.readFileSync(todosFile, "utf8"));
