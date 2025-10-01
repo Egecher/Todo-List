@@ -68,9 +68,15 @@ async function deleteTodo(id) {
 const sortable = new Sortable(list, {
   handle: '.drag-handle',
   animation: 150,
-  onEnd: async function (evt) {
-    const ids = Array.from(list.children).map(li => li.dataset.id);
-    console.log('Yeni sıra:', ids);
+  onEnd: async () => {
+    const ids = Array.from(list.children).map(li => Number(li.dataset.id));
+    const reversedIds = [...ids].reverse();
+
+    await fetch(`${API_URL}/reorder`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ids: reversedIds }),
+    });
   }
 });
 
