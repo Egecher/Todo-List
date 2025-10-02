@@ -24,7 +24,7 @@ function addTodoToDOM(todo) {
   const li = document.createElement("li");
   li.dataset.id = todo.id;
   li.innerHTML = `
-    <div class="todo-content">
+    <div class="todo-content"">
       <span class="drag-handle" style="cursor: grab; margin-right:8px;">☰</span>
       <input 
         type="checkbox" 
@@ -36,7 +36,7 @@ function addTodoToDOM(todo) {
       <span class="${todo.completed ? "completed" : ""}">${todo.text}</span>
     </div>
     <div>
-      <button onclick="deleteTodo(${todo.id})" class="delete-btn">Kaldır</button>
+      <button onclick="deleteTodo(${todo.id})" class="delete-btn">-</button>
     </div>
   `;
   list.prepend(li);
@@ -54,6 +54,7 @@ addBtn.addEventListener("click", async () => {
   addTodoToDOM(newTodo);
   input.value = "";
 });
+//!düzenleme buttonu eklencek
 
 async function toggleTodo(id) {
   await fetch(`${API_URL}/${id}`, { method: "PUT" });
