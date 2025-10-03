@@ -40,9 +40,7 @@ npm install
 
 3. Çalıştır
 
-```bash
-[Starter](starter.bat)
-```
+[Başlatıcı](starter.bat)'ya basarak projeyi kaldırın.
 
 4. Tarayıcıda aç:
    `http://127.0.0.1:5000/`
