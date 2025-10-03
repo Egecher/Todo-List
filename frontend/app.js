@@ -62,7 +62,14 @@ async function toggleTodo(id) {
 }
 
 async function editTodo(id) {
-  const newText = prompt("Görev'i düzenleyin:");
+  let data = await fetch(`${API_URL}`, {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  });
+
+  todo = await data.json();
+
+  const newText = prompt("Görev'i düzenleyin:", todo.find(t => t.id === id).text);
   if (newText) {
     await fetch(`${API_URL}/${id}`, {
       method: "PATCH",
