@@ -51,6 +51,16 @@ app.put("/api/todos/reorder", (req, res) => {
   }
 });
 
+// Edit todo
+app.patch("/api/todos/:id", (req, res) => {
+  const todos = JSON.parse(fs.readFileSync(todosFile, "utf8"));
+  const todo = todos.find((t) => t.id == req.params.id);
+  if (!todo) return res.status(404).json({ message: "Not found" });
+  if (req.body.text) todo.text = req.body.text;
+  fs.writeFileSync(todosFile, JSON.stringify(todos, null, 2));
+  res.json({ message: "Edited", todo });
+});
+
 // Toggle complete
 app.put("/api/todos/:id", (req, res) => {
   const todos = JSON.parse(fs.readFileSync(todosFile, "utf8"));
