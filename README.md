@@ -32,23 +32,18 @@ git clone https://github.com/Egecher/Todo-List.git
 cd todo-app
 ```
 
-2. Backend’i kur ve çalıştır:
+2. Backend’i kur:
 
 ```bash
-cd backend
 npm install
-node server.js
 ```
 
-3. Frontend’i çalıştır:
+3. Çalıştır
 
-```bash
-cd ../frontend
-npx live-server
-```
+[Starter](starter.bat)
 
 4. Tarayıcıda aç:
-   `http://127.0.0.1:8080`
+   `http://127.0.0.1:5000/`
 
 ---
 
@@ -63,7 +58,9 @@ todo-app/
 │   ├── index.html
 │   ├── style.css
 │   └── app.js
+└── LICENSE
 └── README.md
+└── starter.bat
 ```
 
 ---
