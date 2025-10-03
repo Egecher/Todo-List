@@ -36,7 +36,8 @@ function addTodoToDOM(todo) {
       <span class="${todo.completed ? "completed" : ""}">${todo.text}</span>
     </div>
     <div>
-      <button onclick="deleteTodo(${todo.id})" class="delete-btn">-</button>
+      <button onclick="editTodo(${todo.id})" class="edit-btn"><i class="fa-solid fa-pen"></i></button>
+      <button onclick="deleteTodo(${todo.id})" class="delete-btn"><i class="fa-solid fa-trash"></i></button>
     </div>
   `;
   list.prepend(li);
@@ -54,11 +55,22 @@ addBtn.addEventListener("click", async () => {
   addTodoToDOM(newTodo);
   input.value = "";
 });
-//!düzenleme buttonu eklencek
 
 async function toggleTodo(id) {
   await fetch(`${API_URL}/${id}`, { method: "PUT" });
   loadTodos();
+}
+
+async function editTodo(id) {
+  const newText = prompt("Görev'i düzenleyin:");
+  if (newText) {
+    await fetch(`${API_URL}/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: newText }),
+    });
+    loadTodos();
+  }
 }
 
 async function deleteTodo(id) {
