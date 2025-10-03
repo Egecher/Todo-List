@@ -38,9 +38,8 @@ cd todo-app
 npm install
 ```
 
-3. Çalıştır
-
-[Başlatıcı](starter.bat)'ya basarak projeyi kaldırın.
+3. Çalıştır:
+    [Başlatıcı](starter.bat)'ya basarak projeyi kaldırın.
 
 4. Tarayıcıda aç:
    `http://127.0.0.1:5000/`
