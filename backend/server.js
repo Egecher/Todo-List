@@ -9,6 +9,12 @@ app.use(express.json());
 
 const todosFile = path.join(__dirname, "data", "todos.json");
 
+app.use(express.static(path.join(__dirname, "..", "frontend")));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "frontend", "index.html"));
+});
+
 // Read all todos
 app.get("/api/todos", (req, res) => {
   const todos = JSON.parse(fs.readFileSync(todosFile, "utf8"));
